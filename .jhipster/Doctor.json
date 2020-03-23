@@ -1,0 +1,42 @@
+{
+    "name": "Doctor",
+    "fields": [
+        {
+            "fieldName": "pin",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": "5"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "doctor",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "hospital",
+            "otherEntityRelationshipName": "doctor",
+            "relationshipName": "hospital",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200323134100",
+    "entityTableName": "doctor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

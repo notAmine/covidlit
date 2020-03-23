@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doctor">
+            <h2><span jhiTranslate="covidlitApp.doctor.detail.title">Doctor</span> {{ doctor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="covidlitApp.doctor.pin">Pin</span></dt>
+                <dd>
+                    <span>{{ doctor.pin }}</span>
+                </dd>
+                <dt><span jhiTranslate="covidlitApp.doctor.user">User</span></dt>
+                <dd>
+                    {{ doctor.user?.id }}
+                </dd>
+                <dt><span jhiTranslate="covidlitApp.doctor.hospital">Hospital</span></dt>
+                <dd>
+                    <div *ngIf="doctor.hospital">
+                        <a [routerLink]="['/hospital', doctor.hospital?.id, 'view']">{{ doctor.hospital?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doctor', doctor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+    "name": "Bed",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "BedStatus",
+            "fieldValues": "AVAILABLE,RESERVED,OCCUPIED,OUTOFORDER"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "hospital",
+            "otherEntityRelationshipName": "bed",
+            "relationshipName": "hospital",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200323134000",
+    "entityTableName": "bed",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

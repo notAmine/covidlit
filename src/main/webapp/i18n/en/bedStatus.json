@@ -1,0 +1,11 @@
+{
+  "covidlitApp": {
+    "BedStatus": {
+      "null": "",
+      "AVAILABLE": "AVAILABLE",
+      "RESERVED": "RESERVED",
+      "OCCUPIED": "OCCUPIED",
+      "OUTOFORDER": "OUTOFORDER"
+    }
+  }
+}

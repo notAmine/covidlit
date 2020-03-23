@@ -1,0 +1,37 @@
+entity Hospital {
+	name String required,
+    streetAddress String,
+	city String required
+}
+
+relationship OneToOne {
+	Hospital{headOfSearvice} to User{hospital}
+}
+
+entity Bed {
+	status BedStatus
+}
+
+relationship OneToMany {
+	Hospital{bed} to Bed{Hospital(name)}
+}
+
+enum BedStatus {
+    AVAILABLE, RESERVED, OCCUPIED, OUTOFORDER
+}
+
+entity Doctor{
+	pin String maxlength(5) required
+}
+
+relationship OneToOne{
+	Doctor to User
+}
+
+relationship ManyToOne {
+  Doctor{hospital(name)} to Hospital
+}
+
+
+service all with serviceImpl
+

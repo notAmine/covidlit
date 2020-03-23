@@ -1,0 +1,6 @@
+export const enum BedStatus {
+  AVAILABLE = 'AVAILABLE',
+  RESERVED = 'RESERVED',
+  OCCUPIED = 'OCCUPIED',
+  OUTOFORDER = 'OUTOFORDER'
+}
